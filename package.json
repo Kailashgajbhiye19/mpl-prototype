@@ -1,0 +1,10 @@
+{
+  "name": "marketplace-literacy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketplace Literacy development commands",
+  "scripts": {
+    "dev": "node scripts/dev-menu.js"
+  }
+}

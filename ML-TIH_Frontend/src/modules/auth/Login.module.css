@@ -1,0 +1,388 @@
+/* Page Container with Soft Ambient Wavy Atmosphere */
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #faf5ff 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1160px;
+  margin: 20px;
+  position: relative;
+  z-index: 10;
+  gap: 36px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Left Side: Hero Training Showcase Card --- */
+.brandSide {
+  flex: 1.1;
+  max-width: 580px;
+  width: 100%;
+}
+
+.heroCard {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  padding: 2rem;
+  box-shadow: 0 20px 45px -10px rgba(124, 58, 237, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.heroHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.portalTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6b21a8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #f3e8ff;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.brandTitle {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #1e1b4b;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.brandSubtitle {
+  font-size: 1.9rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+}
+
+.brandImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30, 27, 75, 0.45) 0%, transparent 60%);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(30, 27, 75, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brandTagline {
+  font-size: 0.92rem;
+  color: #475569;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metricChip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f5f3ff;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  border-radius: 14px;
+}
+
+.chipNumber {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #3b0764;
+}
+
+.chipLabel {
+  font-size: 0.73rem;
+  color: #6b21a8;
+  font-weight: 600;
+}
+
+/* --- Right Side: Pristine Floating Login Card --- */
+.formSide {
+  width: 100%;
+  max-width: 430px;
+}
+
+.formContainer {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  box-shadow: 0 20px 50px -10px rgba(124, 58, 237, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.cardLogo {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #581c87 0%, #7c3aed 50%, #a855f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+}
+
+.title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.label {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrapper .icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 14px 13px 44px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+.passwordToggle:hover {
+  color: #7c3aed;
+}
+
+.optionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.83rem;
+  margin-top: 0.2rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #7c3aed;
+  cursor: pointer;
+}
+
+.forgotLink {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.forgotLink:hover {
+  color: #581c87;
+  text-decoration: underline;
+}
+
+.submitBtn {
+  margin-top: 0.8rem;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #581c87 0%, #7c3aed 50%, #9333ea 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+  transition: all 0.22s ease;
+  font-family: inherit;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cardFooter {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.76rem;
+  color: #64748b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .brandSide {
+    max-width: 100%;
+  }
+}
